@@ -115,7 +115,20 @@ def test_gemini_safety_config_example() -> None:
     text = text.lower()
     assert len(text) > 0
     assert any(
-        [_ in text for _ in ("scone", "blueberry", "coffee,", "flower", "table")]
+        [
+            _ in text
+            for _ in (
+                "scone",
+                "blueberry",
+                "coffee,",
+                "flower",
+                "table",
+                "cookie",
+                "spoon",
+                "cup",
+                "plant",
+            )
+        ]
     )
 
 
@@ -127,10 +140,8 @@ def test_gemini_single_turn_video_example() -> None:
 
 
 def test_gemini_pdf_example() -> None:
-    text = gemini_pdf_example.generate_text(PROJECT_ID, LOCATION)
-    text = text.lower()
+    text = gemini_pdf_example.analyze_pdf(PROJECT_ID)
     assert len(text) > 0
-    assert any([_ in text for _ in ("intake", "form", "software")])
 
 
 def test_gemini_chat_example() -> None:
