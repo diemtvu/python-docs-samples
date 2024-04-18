@@ -13,7 +13,6 @@
 # limitations under the License.
 
 # [START generativeaionvertexai_gemini_grounding_with_web]
-# [START generativeaionvertexai_gemini_grounding_with_vais]
 
 import vertexai
 from vertexai.preview.generative_models import (
@@ -23,9 +22,6 @@ from vertexai.preview.generative_models import (
     grounding,
     Tool,
 )
-
-# [END generativeaionvertexai_gemini_grounding_with_vais]
-
 
 def generate_text_with_grounding_web(
     project_id: str, location: str
